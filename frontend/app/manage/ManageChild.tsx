@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import Dropdown from '@/components/Dropdown'
 import BasicButton from '@/components/BasicButton'
 import { createClient } from '@/utils/supabase/client'
 import { toast } from 'react-toastify'
@@ -30,12 +29,12 @@ const ManageChild:React.FC<ManageChildProps> = ({ realmId, startingShareId, star
 
     async function save() {
         if (name.trim() === '') {
-            toast.error('Name cannot be empty!')
+            toast.error('Tên không được để trống!')
             return
         }
 
         setModal('Loading')
-        setLoadingText('Saving...')
+        setLoadingText('Đang lưu...')
 
         const { error } = await supabase
             .from('realms')
@@ -48,7 +47,7 @@ const ManageChild:React.FC<ManageChildProps> = ({ realmId, startingShareId, star
         if (error) {
             toast.error(error.message)
         } else {
-            toast.success('Saved!')
+            toast.success('Đã lưu!')
         }
 
         revalidate('/manage/[id]')
@@ -58,12 +57,12 @@ const ManageChild:React.FC<ManageChildProps> = ({ realmId, startingShareId, star
     function copyLink() {
         const link = process.env.NEXT_PUBLIC_BASE_URL + '/play/' + realmId + '?shareId=' + shareId
         navigator.clipboard.writeText(link)
-        toast.success('Link copied!')
+        toast.success('Đã sao chép liên kết!')
     }
 
     async function generateNewLink() {
         setModal('Loading')
-        setLoadingText('Generating new link...')
+        setLoadingText('Đang tạo liên kết mới...')
 
         const newShareId = uuidv4()
         const { error } = await supabase
@@ -79,7 +78,7 @@ const ManageChild:React.FC<ManageChildProps> = ({ realmId, startingShareId, star
             setShareId(newShareId)
             const link = process.env.NEXT_PUBLIC_BASE_URL + '/play/' + realmId + '?shareId=' + newShareId
             navigator.clipboard.writeText(link)
-            toast.success('New link copied!')
+            toast.success('Đã sao chép liên kết mới!')
         }
 
         revalidate('/manage/[id]')
@@ -92,37 +91,69 @@ const ManageChild:React.FC<ManageChildProps> = ({ realmId, startingShareId, star
     }
 
     return (
-        <div className='flex flex-col items-center pt-24'>
-            <div className='flex flex-row gap-8 relative'>
-                <div className='flex flex-col h-[500px] w-[200px] border-white border-r-2 pr-4 gap-2'>
-                    <h1 className={`${selectedTab === 0 ? 'font-bold underline' : ''} cursor-pointer`} onClick={() => setSelectedTab(0)}>General</h1> 
-                    <h1 className={`${selectedTab === 1 ? 'font-bold underline' : ''} cursor-pointer`} onClick={() => setSelectedTab(1)}>Sharing Options</h1> 
+        <div className='flex flex-col items-center pt-8'>
+            <div className='bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 flex flex-col sm:flex-row gap-8 w-full max-w-2xl'>
+                {/* Tabs */}
+                <div className='flex flex-col min-h-[220px] w-[180px] pr-6 gap-2'>
+                    <button
+                        className={`py-3 px-4 rounded-xl font-semibold text-lg transition-all
+                            ${selectedTab === 0
+                                ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-400 text-white shadow'
+                                : 'bg-white/0 text-indigo-200 hover:bg-white/10'}
+                        `}
+                        onClick={() => setSelectedTab(0)}
+                    >
+                        Thông tin chung
+                    </button>
+                    <button
+                        className={`py-3 px-4 rounded-xl font-semibold text-lg transition-all
+                            ${selectedTab === 1
+                                ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-400 text-white shadow'
+                                : 'bg-white/0 text-indigo-200 hover:bg-white/10'}
+                        `}
+                        onClick={() => setSelectedTab(1)}
+                    >
+                        Chia sẻ & liên kết
+                    </button>
                 </div>
-                <div className='flex flex-col w-[300px]'>
+                {/* Main Content */}
+                <div className='flex flex-col w-full gap-6'>
                     {selectedTab === 0 && (
-                        <div className='flex flex-col gap-2'>
-                            Name
-                            <BasicInput value={name} onChange={onNameChange} maxLength={32}/>
+                        <div className='flex flex-col gap-3'>
+                            <label className="font-semibold text-indigo-100">Tên không gian</label>
+                            <BasicInput
+                                value={name}
+                                onChange={onNameChange}
+                                maxLength={32}
+                                className="bg-white/20 text-white border border-indigo-200 rounded-lg px-3 py-2"
+                            />
                         </div>
                     )}
                     {selectedTab === 1 && (
-                        <div className='flex flex-col gap-2'>
-                            <BasicButton className='flex flex-row items-center gap-2 text-sm max-w-max' onClick={copyLink}>
-                                Copy Link <Copy />
+                        <div className='flex flex-col gap-4'>
+                            <BasicButton
+                                className="flex flex-row items-center gap-2 text-sm max-w-max bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg px-4 py-2 shadow"
+                                onClick={copyLink}
+                            >
+                                Sao chép liên kết <Copy />
                             </BasicButton>
-                            <BasicButton className='flex flex-row items-center gap-2 text-sm max-w-max' onClick={generateNewLink}>
-                                Generate New Link <Copy />
+                            <BasicButton
+                                className="flex flex-row items-center gap-2 text-sm max-w-max bg-purple-600 hover:bg-purple-700 text-white rounded-lg px-4 py-2 shadow"
+                                onClick={generateNewLink}
+                            >
+                                Tạo liên kết mới <Copy />
                             </BasicButton>
                         </div>
                     )}
-                    {selectedTab === 2 && (
-                        <div className='flex flex-col gap-2'>
-                            
-                        </div>
-                    )}
-                    </div>
-                <BasicButton className='absolute bottom-[-50px] right-0' onClick={save}>
-                    Save
+                </div>
+            </div>
+            {/* Save Button */}
+            <div className="w-full max-w-2xl flex justify-end mt-6">
+                <BasicButton
+                    className="bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-400 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:scale-105 transition-all"
+                    onClick={save}
+                >
+                    Lưu thay đổi
                 </BasicButton>
             </div>
         </div>
