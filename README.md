@@ -44,10 +44,18 @@ npm install
 cd Backend
 npm install
 ```
-**Sau đó chạy npm run dev : backend là 3001 localhost và Front-end là 3001**
-<img width="1916" height="1007" alt="Ảnh chụp màn hình 2025-08-17 114107" src="https://github.com/user-attachments/assets/68156d3a-8594-4ab2-9605-a30c8025ac6c" />
+**Ta có :**
+- Backend: http://localhost:3001  
+- Frontend: http://localhost:3000  
 
-<img width="1919" height="972" alt="Ảnh chụp màn hình 2025-08-17 113823" src="https://github.com/user-attachments/assets/0a598b84-1ea6-4689-8bd1-5a99a2e0fec3" />
+---
+
+### Giao diện Backend & Frontend
+| Frontend | Backend |
+|---------|----------|
+| ![Backend](https://github.com/user-attachments/assets/68156d3a-8594-4ab2-9605-a30c8025ac6c) | ![Frontend](https://github.com/user-attachments/assets/0a598b84-1ea6-4689-8bd1-5a99a2e0fec3) |
+| *Hình 1: Màn Hình chạy của Front-end* | *Hình 2: Màn Hình chạy của Back-end* |
+
 
 ### 3. Tạo project Supabase
 
@@ -60,7 +68,8 @@ npm install
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY` → Anon public key (dùng cho **frontend**)  
 
 ---
-<img width="1889" height="875" alt="Ảnh chụp màn hình 2025-08-17 112735" src="https://github.com/user-attachments/assets/8d214154-d6fc-47f0-9702-8ab44dbe72cf" />
+<img src="https://github.com/user-attachments/assets/8d214154-d6fc-47f0-9702-8ab44dbe72cf" width="100%" alt="Supabase Project" />
+<p align="center"><em>Hình 3: Màn hình Project Supabase</em></p>
 
 ### 4. Tạo project Agora
 
@@ -70,9 +79,9 @@ npm install
 4. Lấy thông tin:  
    - `NEXT_PUBLIC_AGORA_APP_ID` → App ID  
    - `APP_CERTIFICATE` → App Certificate (dùng ở **backend** để tạo token cho client)
-   - 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d64073c9-7d58-47c2-8ae1-26a8f571d9d1" />
-
+   
+<img src="https://github.com/user-attachments/assets/d64073c9-7d58-47c2-8ae1-26a8f571d9d1" width="100%" alt="Agora Project" />
+<p align="center"><em>Hình 4: Màn hình project đã tạo của Agora</em></p>
 ---
 
 ### 5. Cấu hình file `.env`
@@ -145,17 +154,20 @@ APP_CERTIFICATE=<your-app-certificate>
 👉 Thay `<project-ref>` bằng **Project Reference** trong Supabase (ví dụ: `abcd1234efgh5678`).
 
 - Nhấn **Create**.
-<img width="1904" height="879" alt="Ảnh chụp màn hình 2025-08-17 114921" src="https://github.com/user-attachments/assets/06ce252f-f628-4ea8-b221-0756fb4965cc" />
 
+<img src="https://github.com/user-attachments/assets/06ce252f-f628-4ea8-b221-0756fb4965cc" width="100%" alt="OAuth Credentials" />
+<p align="center"><em>Hình 5: Gán xong các URL JavaScript và URL Redirect</em></p>
 ---
 
 ### 6. Lấy Client ID & Client Secret
 Sau khi tạo xong, Google sẽ hiện ra thông tin:  
 - **Client ID**: `xxxxx.apps.googleusercontent.com`  
 - **Client Secret**: `yyyyyyyyy`
-<img width="1919" height="884" alt="Ảnh chụp màn hình 2025-08-17 113649" src="https://github.com/user-attachments/assets/8f8452dc-dd8c-4a7d-85d3-897ec0162e23" />
 
-<img width="471" height="393" alt="Ảnh chụp màn hình 2025-08-17 113525" src="https://github.com/user-attachments/assets/cad97a48-3c9d-4c1a-bd26-8df0cbedca63" />
+| Client ID | Client Secret |
+|-----------|---------------|
+| ![Client ID](https://github.com/user-attachments/assets/8f8452dc-dd8c-4a7d-85d3-897ec0162e23) | ![Client Secret](https://github.com/user-attachments/assets/cad97a48-3c9d-4c1a-bd26-8df0cbedca63) |
+| *Hình 6: Client ID* | *Hình 7: Client Secret* |
 
 
 Hãy **copy** 2 thông tin này dán vào Supabase.
@@ -168,8 +180,11 @@ Hãy **copy** 2 thông tin này dán vào Supabase.
 - Bật Google.
 - Dán **Client ID** và **Client Secret** vừa lấy từ Google.
 - Nhấn **Save**.
-<img width="1871" height="898" alt="Ảnh chụp màn hình 2025-08-17 113431" src="https://github.com/user-attachments/assets/ccbc5969-3733-41b1-b85e-5efd6ff52f3c" />
-<img width="1901" height="865" alt="image" src="https://github.com/user-attachments/assets/1c8af32a-7762-4e05-a842-303a750f23f4" />
+  
+| Giao diện Authentication | Enable Google |
+|-------------------------|---------------|
+| ![Auth Dashboard](https://github.com/user-attachments/assets/ccbc5969-3733-41b1-b85e-5efd6ff52f3c) | ![Enable Google](https://github.com/user-attachments/assets/1c8af32a-7762-4e05-a842-303a750f23f4) |
+| *Hình 8: Toàn bộ giao diện Authentication với Google* | *Hình 9: Nhập Client ID & Secret để bật Google* |
 
 ---
 
@@ -214,13 +229,15 @@ CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 2.  Dán SQL sau và nhấn **Run**:
 
-`CREATE TABLE public.profiles (
+```Sql
+CREATE TABLE public.profiles (
   id uuid REFERENCES auth.users(id) PRIMARY KEY,
   username text,
   skin text DEFAULT 'default',
   created_at timestamptz DEFAULT now()
-);`
-<img width="1919" height="880" alt="image" src="https://github.com/user-attachments/assets/8fbb0901-d9fa-4842-88d9-1fe19233b106" />
+);
+```
+<img src="https://github.com/user-attachments/assets/8fbb0901-d9fa-4842-88d9-1fe19233b106" width="100%" alt="Profiles Table" /> <p align="center"><em>Hình 10: Màn hình bảng `profiles` trong Supabase</em></p>
 
 -   `id`: liên kết với Supabase Auth
 
@@ -252,7 +269,9 @@ CREATE TABLE public.realms (
   updated_at timestamptz DEFAULT now()
 );
 ```
-<img width="1919" height="889" alt="image" src="https://github.com/user-attachments/assets/a555cd0f-fddb-4248-b48f-17d4c6a7c73e" />
+
+<img src="https://github.com/user-attachments/assets/a555cd0f-fddb-4248-b48f-17d4c6a7c73e" width="100%" alt="Realms Table" />
+<p align="center"><em>Hình 11: Màn hình bảng `public.realms` trong Supabase</em></p>
 
 -   `id`: UUID tự động
 
@@ -281,7 +300,11 @@ CREATE TABLE public.realms (
 
 -   Có thể nhấn **Insert Row** để thử thêm dữ liệu mẫu
 
-<img width="1902" height="866" alt="image" src="https://github.com/user-attachments/assets/e70a2360-e8d2-408d-a587-ef55ca96ee6e" />
+
+| Realms | Profiles |
+|--------|----------|
+| ![Realms Table](https://github.com/user-attachments/assets/e70a2360-e8d2-408d-a587-ef55ca96ee6e) | ![Profiles Table](https://github.com/user-attachments/assets/3a573d27-a29b-46e2-a1ff-53c3376aa6fb) |
+| *Hình 1: Dữ liệu bảng `realms`* | *Hình 2: Dữ liệu bảng `profiles`* |
 
 
 * * * * *
