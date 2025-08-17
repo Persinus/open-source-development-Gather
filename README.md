@@ -33,7 +33,7 @@ Dự án **clone của Gather.town** với các tính năng: không gian tuỳ c
 ```bash
 git clone https://github.com/trevorwrightdev/gather-clone.git
 ```
-###2. Cài đặt phụ thuộc
+### 2. Cài đặt phụ thuộc
 **Frontend**
 ```bash
 cd frontend
