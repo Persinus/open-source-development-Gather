@@ -23,13 +23,15 @@ export default async function Manage({ params }: { params: { id: string } }) {
     const realm = data
 
     return (
-        <div>
-            <ManageChild 
-                realmId={realm.id} 
-                startingShareId={realm.share_id} 
-                startingOnlyOwner={realm.only_owner} 
-                startingName={realm.name}
-            />
+        <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950 flex items-center justify-center py-12 px-4">
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 w-full max-w-2xl">
+                <ManageChild 
+                    realmId={realm.id} 
+                    startingShareId={realm.share_id} 
+                    startingOnlyOwner={realm.only_owner} 
+                    startingName={realm.name}
+                />
+            </div>
         </div>
     )
 }
