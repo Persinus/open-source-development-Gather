@@ -2,11 +2,12 @@
 
 👉 [Xem demo](https://www.youtube.com/watch?v=AnhsC7Fmt20)
 
-Dự án **clone của Gather.town** với các tính năng: không gian tuỳ chỉnh, chat video theo khoảng cách, và networking nhiều người chơi.
+Đây là **dự án môn học Phát triển Mã nguồn mở**, được thực hiện dưới dạng **clone của Gather.town**.  
+Dự án có các tính năng chính: không gian tuỳ chỉnh, chat video theo khoảng cách, và networking nhiều người chơi.
 
-Đây là bản **fork từ Realms** – một project trước đó cũng được lấy cảm hứng từ Gather. [Xem tại đây](https://github.com/trevorwrightdev/realms).
+Dự án này là **fork từ Realms** – một project trước đó cũng được lấy cảm hứng từ Gather.  
+[Xem Realms tại đây](https://github.com/trevorwrightdev/realms).
 
----
 
 ## 🛠 Công nghệ sử dụng
 - **Next.js** – Frontend  
