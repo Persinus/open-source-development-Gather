@@ -15,15 +15,29 @@ export const NavbarChild:React.FC<NavbarChildProps> = ({ name, avatar_url }) => 
     const { setModal } = useModal()
 
     return (
-        <div className='h-16'>
-            <div className='w-full fixed bg-secondary flex flex-row items-center p-2 pl-8 justify-end sm:justify-between z-10'>
-                <BasicButton onClick={() => setModal('Create Realm')} className='hidden sm:flex flex-row items-center gap-2 py-[10px]'>
+        <div className="h-16">
+            <div className="w-full fixed top-0 left-0 bg-white/20 backdrop-blur-md shadow-lg flex flex-row items-center p-2 pl-8 justify-end sm:justify-between z-20">
+                <BasicButton
+                    onClick={() => setModal('Create Realm')}
+                    className="hidden sm:flex flex-row items-center gap-2 py-[10px] px-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-400 text-white font-semibold rounded-xl shadow hover:scale-105 transition-all"
+                >
                     Create Space
-                    <PlusCircleIcon className='h-5'/>
+                    <PlusCircleIcon className="h-5" />
                 </BasicButton>
-                <div className='flex flex-row items-center gap-4 hover:bg-light-secondary animate-colors rounded-full cursor-pointer py-1 px-1 select-none' onClick={() => setModal('Account Dropdown')}>
-                    <p className='text-white'>{name}</p>
-                    <Image alt='avatar' src={avatar_url} width={48} height={48} className='aspect-square rounded-full' />
+                <div
+                    className="flex flex-row items-center gap-4 bg-white/10 hover:bg-white/30 transition-colors rounded-full cursor-pointer py-1 px-3 select-none shadow"
+                    onClick={() => setModal('Account Dropdown')}
+                >
+                    <p className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 via-purple-200 to-indigo-400 drop-shadow">
+                        {name}
+                    </p>
+                    <Image
+                        alt="avatar"
+                        src={avatar_url}
+                        width={44}
+                        height={44}
+                        className="aspect-square rounded-full border-2 border-indigo-200 shadow"
+                    />
                 </div>
             </div>
         </div> 
