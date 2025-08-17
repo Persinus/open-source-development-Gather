@@ -17,22 +17,33 @@ const IntroScreen:React.FC<IntroScreenProps> = ({ realmName, skin, username, set
     const src = '/sprites/characters/Character_' + skin + '.png'
 
     return (
-        <main className='dark-gradient w-full h-screen flex flex-col items-center pt-28'>
-            <h1 className='text-4xl font-semibold'>Welcome to <span className='text-[#CAD8FF]'>{realmName}</span></h1>
-            <section className='flex flex-row mt-32 items-center gap-24'>
-                <div className='flex flex-col items-center gap-4'>
-                    <div className='aspect-video w-[337px] h-[227px] bg-black rounded-xl border-2 border-[#3F4776] overflow-hidden'>
+        <main className="w-full min-h-screen flex flex-col items-center justify-center px-2 bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950">
+            <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-6">
+                Chào mừng đến với <span className="text-[#CAD8FF]">{realmName}</span>
+            </h1>
+            <section className="
+                flex flex-col-reverse sm:flex-row items-center gap-8 sm:gap-16
+                bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 sm:p-10
+                max-w-3xl w-full
+            ">
+                {/* Video + mic/cam */}
+                <div className="flex flex-col items-center gap-4 w-full sm:w-auto">
+                    <div className="aspect-video w-full sm:w-[300px] h-[180px] bg-black rounded-xl border-2 border-[#3F4776] overflow-hidden">
                         <LocalVideo/>
                     </div>
                     <MicAndCameraButtons/>
                 </div>
-                <div className='flex flex-col items-center gap-4'>
-                    <div className='flex flex-row items-center'>
+                {/* Avatar + username + join */}
+                <div className="flex flex-col items-center gap-4 w-full sm:w-auto">
+                    <div className="flex flex-row items-center">
                         <AnimatedCharacter src={src} noAnimation/>
-                        <p className='relative top-4'>{username}</p>
+                        <p className="relative top-4 ml-2">{username}</p>
                     </div>
-                    <BasicButton className='py-0 px-32 w-[250px]' onClick={() => setShowIntroScreen(false)}>
-                        Join
+                    <BasicButton
+                        className="py-2 px-10 w-full sm:w-[180px]"
+                        onClick={() => setShowIntroScreen(false)}
+                    >
+                        Vào phòng
                     </BasicButton>
                 </div>
             </section>
@@ -46,17 +57,17 @@ function LocalVideo() {
     const { isCameraMuted, isMicMuted } = useVideoChat()
 
     return (
-        <div className='w-full h-full bg-[#111111] grid place-items-center relative'>
-            <div id='local-video' className='w-full h-full'>
-
+        <div className="w-full h-full bg-[#111111] grid place-items-center relative">
+            <div id="local-video" className="w-full h-full"></div>
+            <div className="absolute select-none text-sm text-white items-center flex flex-col gap-1">
+                {isMicMuted && isCameraMuted && <p>Bạn đã tắt micro và camera</p>}
+                {isCameraMuted && !isMicMuted && <p>Bạn đã tắt camera</p>}
             </div>
-            <div className='absolute select-none text-sm text-white items-center flex flex-col gap-1'>
-                {isMicMuted && isCameraMuted && <p>You are muted</p>}
-                {isCameraMuted && <p>Your camera is off</p>}
-            </div>
-            {isMicMuted && !isCameraMuted && <p className='absolute bottom-2 right-3 select-none text-sm text-white bg-black bg-opacity-50 p-1 px-2 rounded-full'>
-                You are muted
-            </p>}
+            {isMicMuted && !isCameraMuted && (
+                <p className="absolute bottom-2 right-3 select-none text-sm text-white bg-black bg-opacity-50 p-1 px-2 rounded-full">
+                    Bạn đã tắt micro
+                </p>
+            )}
         </div>
     )
 }
