@@ -74,24 +74,26 @@ export class Player {
     }
 
     private async loadAnimations() {
-        const src = `/sprites/characters/Character_${this.skin}.png`
-        await PIXI.Assets.load(src)
+    const src = `/sprites/characters/Character_${this.skin}.png`
 
-        const spriteSheetData = JSON.parse(JSON.stringify(playerSpriteSheetData))
-        spriteSheetData.meta.image = src
+    // Load texture từ Assets (nó sẽ trả về BaseTexture hoặc Texture)
+    const texture = await PIXI.Assets.load(src) as PIXI.Texture
 
-        this.sheet = new PIXI.Spritesheet(PIXI.Texture.from(src), spriteSheetData)
-        await this.sheet.parse()
+    const spriteSheetData = JSON.parse(JSON.stringify(playerSpriteSheetData))
+    spriteSheetData.meta.image = src
 
-        const animatedSprite = new PIXI.AnimatedSprite(this.sheet.animations['idle_down'])
-        animatedSprite.animationSpeed = this.animationSpeed
-        animatedSprite.play()
+    // Phải dùng texture.baseTexture thay vì PIXI.Texture.from(src)
+    this.sheet = new PIXI.Spritesheet(texture.baseTexture, spriteSheetData)
+    await this.sheet.parse()
 
-        if (!this.initialized) {
-            this.parent.addChild(animatedSprite)
-        }
+    const animatedSprite = new PIXI.AnimatedSprite(this.sheet.animations['idle_down'])
+    animatedSprite.animationSpeed = this.animationSpeed
+    animatedSprite.play()
+
+    if (!this.initialized) {
+        this.parent.addChild(animatedSprite)
     }
-
+}
     public changeSkin = async (skin: string) => {
         if (!skins.includes(skin)) return
 
