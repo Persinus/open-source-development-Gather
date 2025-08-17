@@ -14,9 +14,14 @@ export default function Login() {
         })
     }
 
-  return (
-    <div className='flex flex-col items-center w-full pt-56'>
-        <GoogleSignInButton onClick={signInWithGoogle}/>
-    </div>
-  );
+    return (
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950">
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl px-10 py-12 flex flex-col items-center gap-8">
+                <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-300 to-indigo-400 drop-shadow mb-2">
+                    Sign in to Gather Clone
+                </h1>
+                <GoogleSignInButton onClick={signInWithGoogle} />
+            </div>
+        </div>
+    );
 }
