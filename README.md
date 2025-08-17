@@ -28,13 +28,13 @@ Dự án này là **fork từ Realms** – một project trước đó cũng đ�
 
 ---
 
-## ⚙️ Hướng dẫn cài đặt chi tiết (A–Z)
+# I.⚙️ Hướng dẫn cài đặt chi tiết (A–Z)
 
-### 1. Clone project về máy
+## 1. Clone project về máy
 ```bash
 git clone https://github.com/trevorwrightdev/gather-clone.git
 ```
-### 2. Cài đặt phụ thuộc
+## 2. Cài đặt phụ thuộc
 **Frontend**
 ```bash
 cd frontend
@@ -51,14 +51,14 @@ npm install
 
 ---
 
-### Giao diện Backend & Frontend
+## Giao diện Backend & Frontend
 | Frontend | Backend |
 |---------|----------|
 | ![Backend](https://github.com/user-attachments/assets/68156d3a-8594-4ab2-9605-a30c8025ac6c) | ![Frontend](https://github.com/user-attachments/assets/0a598b84-1ea6-4689-8bd1-5a99a2e0fec3) |
 | *Hình 1: Màn Hình chạy của Front-end* | *Hình 2: Màn Hình chạy của Back-end* |
 
 
-### 3. Tạo project Supabase
+## 3. Tạo project Supabase
 
 1. Vào [Supabase](https://supabase.com) → đăng nhập.  
 2. Nhấn **New Project**.  
@@ -72,7 +72,7 @@ npm install
 <img src="https://github.com/user-attachments/assets/8d214154-d6fc-47f0-9702-8ab44dbe72cf" width="100%" alt="Supabase Project" />
 <p align="center"><em>Hình 3: Màn hình Project Supabase</em></p>
 
-### 4. Tạo project Agora
+## 4. Tạo project Agora
 
 1. Vào [Agora Console](https://console.agora.io) → đăng nhập.  
 2. Vào **Project Management → Create Project**.  
@@ -85,7 +85,7 @@ npm install
 <p align="center"><em>Hình 4: Màn hình project đã tạo của Agora</em></p>
 ---
 
-### 5. Cấu hình file `.env`
+## 5. Cấu hình file `.env`
 
 📌 Trong thư mục **backend/.env** tạo file với nội dung:  
 ```env
@@ -105,35 +105,33 @@ NEXT_PUBLIC_AGORA_APP_ID=<your-agora-app-id>
 APP_CERTIFICATE=<your-app-certificate> 
 ```
 
-# 🔑 Hướng dẫn cấu hình Google OAuth cho Supabase
+# II. 🔑 Hướng dẫn cấu hình Google OAuth cho Supabase
 
 Để sử dụng đăng nhập Google trong dự án Gather Clone (hoặc bất kỳ app nào dùng Supabase Auth), bạn cần tạo Google OAuth Client ID và kết nối với Supabase.  
 
 ---
 
-## 📌 Các bước chi tiết
-
-### 1. Vào Google Cloud Console
+## 1. Vào Google Cloud Console
 👉 Truy cập: [https://console.cloud.google.com/](https://console.cloud.google.com/)  
 Đăng nhập bằng tài khoản Google của bạn.
 
 ---
 
-### 2. Tạo Project (nếu chưa có)
+## 2. Tạo Project (nếu chưa có)
 - Nhấn **Select a project** (góc trên cùng).
 - Chọn **New Project**.
 - Điền tên project → nhấn **Create**.
 
 ---
 
-### 3. Bật Google OAuth API
+## 3. Bật Google OAuth API
 - Trong menu trái → chọn **APIs & Services → Library**.
 - Tìm **Google Identity Services API** hoặc **OAuth 2.0**.
 - Nhấn **Enable**.
 
 ---
 
-### 4. Cấu hình OAuth Consent Screen
+## 4. Cấu hình OAuth Consent Screen
 - Vào **APIs & Services → OAuth consent screen**.
 - Chọn **External** (nếu bạn muốn cho người dùng bên ngoài login bằng Google).
 - Điền các thông tin yêu cầu:
@@ -145,7 +143,7 @@ APP_CERTIFICATE=<your-app-certificate>
 
 ---
 
-### 5. Tạo OAuth Credentials
+## 5. Tạo OAuth Credentials
 - Vào **APIs & Services → Credentials**.
 - Nhấn **+ Create Credentials → OAuth Client ID**.
 - Ở phần **Application type**, chọn **Web application**.
@@ -160,7 +158,7 @@ APP_CERTIFICATE=<your-app-certificate>
 <p align="center"><em>Hình 5: Gán xong các URL JavaScript và URL Redirect</em></p>
 ---
 
-### 6. Lấy Client ID & Client Secret
+## 6. Lấy Client ID & Client Secret
 Sau khi tạo xong, Google sẽ hiện ra thông tin:  
 - **Client ID**: `xxxxx.apps.googleusercontent.com`  
 - **Client Secret**: `yyyyyyyyy`
@@ -176,7 +174,7 @@ Hãy **copy** 2 thông tin này dán vào Supabase.
 
 ---
 
-### 7. Cấu hình trong Supabase
+## 7. Cấu hình trong Supabase
 - Quay lại **Supabase Dashboard** → **Authentication → Providers → Google**.
 - Bật Google.
 - Dán **Client ID** và **Client Secret** vừa lấy từ Google.
@@ -197,6 +195,7 @@ await supabase.auth.signInWithOAuth({ provider: "google" });
 ```
 
 
+# III. 🔑 Hướng dẫn thêm bảng Posgresql ( Tính năng mới bản chính không cập nhật )
 
 
 ## 1. Đăng nhập Supabase
@@ -319,7 +318,7 @@ CREATE TABLE public.realms (
 
 * * * * *
 
-7\. Tham khảo
+## 7. Tham khảo
 -------------
 
 -   Supabase Docs
