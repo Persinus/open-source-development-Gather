@@ -343,6 +343,7 @@ CREATE TABLE public.realms (
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b89f9ed2-c99f-447d-9b1c-65a7895374af" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0da192dd-e705-4422-ab91-c13417453a22" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ce387970-c8e5-441e-a88e-2df2b4780cd3" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7f796277-e4c3-4c0c-a2dc-42d893b44cb7" />
 
 
 
