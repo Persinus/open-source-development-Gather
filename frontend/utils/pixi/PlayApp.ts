@@ -367,6 +367,12 @@ export class PlayApp extends App {
         signal.on('disableInput', this.onDisableInput)
         signal.on('message', this.onMessage)
         signal.on('getSkinForUid', this.getSkinForUid)
+        // Thêm listener cho reaction
+        signal.on('sendReaction', (emoji: string) => {
+        if (this.player) {
+            this.player.showReaction(emoji)
+        }
+    })
     }
 
     private removeSignalListeners = () => {
