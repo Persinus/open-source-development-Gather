@@ -1,83 +1,49 @@
-// app/play/[id]/page.tsx (Play.tsx của bạn)
-
+import React from 'react'
 import NotFound from '@/app/not-found'
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 import { getPlayRealmData } from '@/utils/supabase/getPlayRealmData'
+import PlayClient from '../PlayClient'
 import { updateVisitedRealms } from '@/utils/supabase/updateVisitedRealms'
 import { formatEmailToName } from '@/utils/formatEmailToName'
-import PlayClientWrapper from './PlayClientWrapper'
 
-export default async function Play({ params, searchParams }: {
-  params: { id: string }
-  searchParams: { shareId: string }
-}) {
-  const supabase = createClient()
-  // Lấy session và user
-  const { data: { session } } = await supabase.auth.getSession()
-  const { data: { user } } = await supabase.auth.getUser()
+export default async function Play({ params, searchParams }: { params: { id: string }, searchParams: { shareId: string } }) {
 
-  if (!session || !user) {
-    return redirect('/signin')
-  }
+    const supabase = createClient()
+    const { data: { session } } = await supabase.auth.getSession()
+    const { data: { user } } = await supabase.auth.getUser()
 
-  // Lấy dữ liệu realm
-  let realmData, realmError
-  if (!searchParams.shareId) {
-    const { data, error } = await supabase
-      .from('realms')
-      .select('map_data, owner_id, name')
-      .eq('id', params.id)
-      .maybeSingle()
-    realmData = data
-    realmError = error
-  } else {
-    const { data, error } = await getPlayRealmData(session.access_token, searchParams.shareId)
-    realmData = data
-    realmError = error
-  }
+    if (!session || !user) {
+        return redirect('/signin')
+    }
+    const { data, error } = !searchParams.shareId ? await supabase.from('realms').select('map_data, owner_id, name').eq('id', params.id).single() : await getPlayRealmData(session.access_token, searchParams.shareId)
+    const { data: profile, error: profileError } = await supabase.from('profiles').select('skin').eq('id', user.id).single()
+    // Show not found page if no data is returned
+    if (!data || !profile) {
+        const message = error?.message || profileError?.message
 
-  // Lấy profile người dùng
-  let { data: profile, error: profileError } = await supabase
-    .from('profiles')
-    .select('skin')
-    .eq('id', user.id)
-    .maybeSingle()
+        return <NotFound specialMessage={message}/>
+    }
 
-  // Nếu chưa có profile thì tạo mới
-  if (!profile) {
-    const { data: newProfile, error: insertError } = await supabase
-      .from('profiles')
-      .insert([{ id: user.id, skin: 'default' }])
-      .select()
-      .single()
-    if (insertError) return <NotFound specialMessage={insertError.message} />
-    profile = newProfile
-  }
+    const realm = data
+    const map_data = realm.map_data
 
-  // Nếu lỗi hoặc thiếu dữ liệu
-  if (!realmData || !profile) {
-    return <NotFound specialMessage={realmError?.message || profileError?.message} />
-  }
+    let skin = profile.skin
 
-  // Cập nhật lịch sử truy cập nếu là share link
-  if (searchParams.shareId && realmData.owner_id !== user.id) {
-    updateVisitedRealms(session.access_token, searchParams.shareId)
-  }
+    if (searchParams.shareId && realm.owner_id !== user.id) {
+        updateVisitedRealms(session.access_token, searchParams.shareId)
+    }
 
-  // Render giao diện chơi
-  return (
-    <div className="min-h-[80dvh] bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950 flex items-center justify-center pt-8 sm:pt-16">
-      <PlayClientWrapper
-        mapData={realmData.map_data}
-        username={formatEmailToName(user.user_metadata.email)}
-        access_token={session.access_token}
-        realmId={params.id}
-        uid={user.id}
-        shareId={searchParams.shareId || ''}
-        initialSkin={profile.skin}
-        name={realmData.name}
-      />
-    </div>
-  )
+    return (
+        <PlayClient 
+            mapData={map_data} 
+            username={formatEmailToName(user.user_metadata.email)} 
+            access_token={session.access_token} 
+            realmId={params.id} 
+            uid={user.id} 
+            shareId={searchParams.shareId || ''} 
+            initialSkin={skin}
+            name={realm.name}
+        />
+    )
 }
