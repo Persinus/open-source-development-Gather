@@ -60,7 +60,7 @@ const RealmsMenu:React.FC<RealmsMenuProps> = ({ realms, errorMessage }) => {
         <>
             {/* Mobile View */}
             <div className='flex flex-col items-center p-4 gap-2 sm:hidden'>
-                {realms.length === 0 && <p className='text-center'>You have no spaces you can join. Create one on desktop to get started!</p>}
+                {realms.length === 0 && <p className='text-center'>Bạn không có không gian nào để tham gia. Hãy tạo một không gian để bắt đầu!!</p>}
                 {realms.map((realm, index) => {
 
                     function selectRealm() {
@@ -85,7 +85,8 @@ const RealmsMenu:React.FC<RealmsMenuProps> = ({ realms, errorMessage }) => {
 
             {/* Desktop View */}
             <div className='flex-col items-center w-full p-8 hidden sm:flex'>
-                {realms.length === 0 && <p className='text-center'>You have no spaces you can join. Create a space to get started!</p>}
+                {realms.length === 0 && <p className='text-center'>
+Bạn không có không gian nào để tham gia. Hãy tạo một không gian để bắt đầu!</p>}
                 <div className='hidden sm:grid grid-cols-2 md:grid-cols-3 gap-8 w-full'>
                     {realms.map((realm, index) => {
                         return (
