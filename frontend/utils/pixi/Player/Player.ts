@@ -7,6 +7,8 @@ import { server } from '../../backend/server'
 import { defaultSkin, skins } from './skins'
 import signal from '@/utils/signal'
 import { videoChat } from '@/utils/video-chat/video-chat'
+
+
 function formatText(message: string, maxLength: number): string {
     message = message.trim()
     const words = message.split(' ')
@@ -63,8 +65,10 @@ export class Player {
     public frozen: boolean = false
     private initialized: boolean = false
     private strikes: number = 0
-
+ 
     private currentChannel: string = 'local'
+    
+    private activeReactions: PIXI.Text[] = []
 
     constructor(skin: string, playApp: PlayApp, username: string, isLocal: boolean = false) {
         this.skin = skin
@@ -117,7 +121,25 @@ export class Player {
         text.y = 8
         this.parent.addChild(text)
     }
+    // chưa show đc reaction lên màn hình 
+    public showReaction(emoji: string) {
+        const reactionText = new PIXI.Text(emoji, {
+    fontFamily: 'silkscreen',
+    fontSize: 64,
+    fill: 0xFFFFFF
+});
+        reactionText.anchor.set(0.5)
+        reactionText.scale.set(0.07)
+        reactionText.y = -100
+        this.parent.addChild(reactionText)
 
+        this.activeReactions.push(reactionText)
+
+        setTimeout(() => {
+            this.parent.removeChild(reactionText)
+            this.activeReactions = this.activeReactions.filter(r => r !== reactionText)
+        }, 2000)
+    }
     public setMessage(message: string) {
         if (this.textTimeout) {
             clearTimeout(this.textTimeout)
