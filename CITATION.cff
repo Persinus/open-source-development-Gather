@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Nếu bạn sử dụng phần mềm này, vui lòng trích dẫn theo định dạng dưới đây."
+authors:
+  - family-names: "Văn A"
+    given-names: "Nguyễn"
+title: "Open Source Development Gather"
+version: "0.1.0"
+doi: "10.5281/zenodo.1234567"
+date-released: "2025-08-18"
+url: "https://github.com/Persinus/open-source-development-Gather"
