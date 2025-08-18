@@ -330,6 +330,7 @@ CREATE TABLE public.realms (
 # IV. 🔑 Phát triển Thêm + Demo Phát triển 
 - Cải thiện UI của Web
 - Chuyển thành ngôn ngữ Tiếng Việt
+- Thêm phần Âm Thanh nền
 
 | Hình 13 | Hình 14 |
 |---------|---------|
