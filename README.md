@@ -3,8 +3,8 @@
 Đây là **dự án môn học Phát triển Mã nguồn mở**, được thực hiện dưới dạng **clone của Gather.town**.  
 Dự án có các tính năng chính: không gian tuỳ chỉnh, chat video theo khoảng cách, và networking nhiều người chơi.
 
-Dự án này là **fork từ Realms** – một project trước đó cũng được lấy cảm hứng từ Gather.  
-[Xem Realms tại đây](https://github.com/trevorwrightdev/realms).
+Dự án này là **fork từ Gather Clone** – một project trước đó cũng được lấy cảm hứng từ Gather.  
+[Xem Realms tại đây](https://github.com/trevorwrightdev/gather-clone).
 
 
 ## 🛠 Công nghệ sử dụng
