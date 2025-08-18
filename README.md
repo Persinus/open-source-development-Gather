@@ -331,18 +331,35 @@ CREATE TABLE public.realms (
 - Cải thiện UI của Web
 - Chuyển thành ngôn ngữ Tiếng Việt
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8041c769-8123-424f-97b7-13af08e38c20" />
-<img width="1916" height="882" alt="image" src="https://github.com/user-attachments/assets/35363934-4990-4fea-ac71-b26e5b84b03c" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f478048e-6732-48e0-9f44-8d3e91e82b04" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/94b17f6b-a6e2-4b7b-b656-52d2be903769" />
-<img width="1919" height="880" alt="image" src="https://github.com/user-attachments/assets/6ceca737-ea56-4f81-bfbd-82d0752e7e51" />
-<img width="1919" height="884" alt="image" src="https://github.com/user-attachments/assets/5e89a065-eb99-4d86-8b12-e452d3ef91e4" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/31dd902a-3d70-49e0-a33e-7f4d6468109c" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b89f9ed2-c99f-447d-9b1c-65a7895374af" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0da192dd-e705-4422-ab91-c13417453a22" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ce387970-c8e5-441e-a88e-2df2b4780cd3" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7f796277-e4c3-4c0c-a2dc-42d893b44cb7" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2ec14f5e-609c-4db2-92d0-ff6c8088627c" />
+| Hình 13 | Hình 14 |
+|---------|---------|
+| ![Hình 13](https://github.com/user-attachments/assets/8041c769-8123-424f-97b7-13af08e38c20) | ![Hình 14](https://github.com/user-attachments/assets/35363934-4990-4fea-ac71-b26e5b84b03c) |
+| *Hình 13* | *Hình 14* |
 
-Development for Persinus
+| Hình 15 | Hình 16 |
+|---------|---------|
+| ![Hình 15](https://github.com/user-attachments/assets/f478048e-6732-48e0-9f44-8d3e91e82b04) | ![Hình 16](https://github.com/user-attachments/assets/94b17f6b-a6e2-4b7b-b656-52d2be903769) |
+| *Hình 15* | *Hình 16* |
+
+| Hình 17 | Hình 18 |
+|---------|---------|
+| ![Hình 17](https://github.com/user-attachments/assets/6ceca737-ea56-4f81-bfbd-82d0752e7e51) | ![Hình 18](https://github.com/user-attachments/assets/5e89a065-eb99-4d86-8b12-e452d3ef91e4) |
+| *Hình 17* | *Hình 18* |
+
+| Hình 19 | Hình 20 |
+|---------|---------|
+| ![Hình 19](https://github.com/user-attachments/assets/31dd902a-3d70-49e0-a33e-7f4d6468109c) | ![Hình 20](https://github.com/user-attachments/assets/b89f9ed2-c99f-447d-9b1c-65a7895374af) |
+| *Hình 19* | *Hình 20* |
+
+| Hình 21 | Hình 22 |
+|---------|---------|
+| ![Hình 21](https://github.com/user-attachments/assets/0da192dd-e705-4422-ab91-c13417453a22) | ![Hình 22](https://github.com/user-attachments/assets/ce387970-c8e5-441e-a88e-2df2b4780cd3) |
+| *Hình 21* | *Hình 22* |
+
+| Hình 23 | Hình 24 |
+|---------|---------|
+| ![Hình 23](https://github.com/user-attachments/assets/7f796277-e4c3-4c0c-a2dc-42d893b44cb7) | ![Hình 24](https://github.com/user-attachments/assets/2ec14f5e-609c-4db2-92d0-ff6c8088627c) |
+| *Hình 23* | *Hình 24* |
+
+**Phát triển bởi Persinus**. Nếu bạn muốn đóng góp hoặc gửi phản hồi, vui lòng mở [issue](#) hoặc gửi pull request trên GitHub. Mọi đóng góp đều được hoan nghênh! 🎉
 
