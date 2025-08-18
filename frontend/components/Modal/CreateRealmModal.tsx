@@ -52,15 +52,15 @@ const CreateRealmModal:React.FC = () => {
 
     return (
         <Modal open={modal === 'Create Realm'} closeOnOutsideClick>
-            <div className="flex flex-col items-center p-6 w-[380px] gap-5 bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl border border-indigo-200">
-                <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-500 mb-1">
+            <div className="flex flex-col items-center p-6 w-[380px] gap-5 bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl border border-indigo-200">
+                <h1 className="text-2xl font-extrabold text-indigo-900 mb-1 drop-shadow">
                     Tạo không gian mới
                 </h1>
-                <p className="text-indigo-200 text-center text-sm mb-2">
+                <p className="text-indigo-800 text-center text-sm mb-2 font-semibold drop-shadow">
                     Đặt tên cho không gian của bạn và chọn bản đồ khởi đầu.
                 </p>
                 <BasicInput
-                    className="w-[260px]"
+                    className="w-[260px] text-indigo-900 placeholder:text-indigo-400 font-semibold"
                     value={realmName}
                     onChange={onChange}
                     maxLength={32}
@@ -75,7 +75,7 @@ const CreateRealmModal:React.FC = () => {
                     />
                     <label
                         htmlFor="useDefaultMap"
-                        className="text-indigo-700 font-semibold select-none cursor-pointer drop-shadow"
+                        className="text-indigo-900 font-semibold select-none cursor-pointer drop-shadow"
                     >
                         Sử dụng bản đồ mẫu mặc định
                     </label>
