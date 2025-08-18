@@ -1,7 +1,5 @@
 # Gather Clone
 
-👉 [Xem demo](https://www.youtube.com/watch?v=AnhsC7Fmt20)
-
 Đây là **dự án môn học Phát triển Mã nguồn mở**, được thực hiện dưới dạng **clone của Gather.town**.  
 Dự án có các tính năng chính: không gian tuỳ chỉnh, chat video theo khoảng cách, và networking nhiều người chơi.
 
@@ -344,6 +342,7 @@ CREATE TABLE public.realms (
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0da192dd-e705-4422-ab91-c13417453a22" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ce387970-c8e5-441e-a88e-2df2b4780cd3" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7f796277-e4c3-4c0c-a2dc-42d893b44cb7" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2ec14f5e-609c-4db2-92d0-ff6c8088627c" />
 
-
+Development for Persinus
 
