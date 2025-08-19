@@ -334,8 +334,10 @@ CREATE TABLE public.realms (
 
 | Hình 13 | Hình 14 |
 |---------|---------|
-| ![Hình 13](https://github.com/user-attachments/assets/8041c769-8123-424f-97b7-13af08e38c20) | ![Hình 14](https://github.com/user-attachments/assets/35363934-4990-4fea-ac71-b26e5b84b03c) |
+| ![Hình 13](https://github.com/user-attachments/assets/caa1a97f-6cd1-4ead-85c3-b130152e05e5) | ![Hình 14](https://github.com/user-attachments/assets/03e07922-4d35-4d47-812b-3e22b5b8fa48) |
 | *Hình 13* | *Hình 14* |
+
+
 
 | Hình 15 | Hình 16 |
 |---------|---------|
@@ -349,18 +351,26 @@ CREATE TABLE public.realms (
 
 | Hình 19 | Hình 20 |
 |---------|---------|
-| ![Hình 19](https://github.com/user-attachments/assets/31dd902a-3d70-49e0-a33e-7f4d6468109c) | ![Hình 20](https://github.com/user-attachments/assets/b89f9ed2-c99f-447d-9b1c-65a7895374af) |
+| ![Hình 19](https://github.com/user-attachments/assets/89878372-853f-45c7-9c55-b72f64e75afb) | ![Hình 20](https://github.com/user-attachments/assets/b89f9ed2-c99f-447d-9b1c-65a7895374af) |
 | *Hình 19* | *Hình 20* |
 
 | Hình 21 | Hình 22 |
 |---------|---------|
-| ![Hình 21](https://github.com/user-attachments/assets/0da192dd-e705-4422-ab91-c13417453a22) | ![Hình 22](https://github.com/user-attachments/assets/ce387970-c8e5-441e-a88e-2df2b4780cd3) |
+| ![Hình 21](https://github.com/user-attachments/assets/e256b341-d6a7-49b7-b7e2-3a7d72247b7c) | ![Hình 22](https://github.com/user-attachments/assets/0da192dd-e705-4422-ab91-c13417453a22) |
 | *Hình 21* | *Hình 22* |
 
 | Hình 23 | Hình 24 |
 |---------|---------|
-| ![Hình 23](https://github.com/user-attachments/assets/7f796277-e4c3-4c0c-a2dc-42d893b44cb7) | ![Hình 24](https://github.com/user-attachments/assets/2ec14f5e-609c-4db2-92d0-ff6c8088627c) |
+| ![Hình 23](https://github.com/user-attachments/assets/b458d7e3-db2d-4ab3-b0c0-28c96fb347d4) | ![Hình 24](https://github.com/user-attachments/assets/714bbb18-0900-46ec-b15d-55b3a3d2e574) |
 | *Hình 23* | *Hình 24* |
+
+| Hình 25 | Hình 26 |
+|---------|---------|
+| ![Hình 23](https://github.com/user-attachments/assets/15db6e6a-c58d-4dbd-b5ba-7c1f18bf3e0f) | ![Hình 24](https://github.com/user-attachments/assets/2ec14f5e-609c-4db2-92d0-ff6c8088627c) |
+| *Hình 25* | *Hình 26* |
+
+
+
 
 **Phát triển bởi Persinus**. Nếu bạn muốn đóng góp hoặc gửi phản hồi, vui lòng mở [issue](#) hoặc gửi pull request trên GitHub. Mọi đóng góp đều được hoan nghênh! 🎉
 
