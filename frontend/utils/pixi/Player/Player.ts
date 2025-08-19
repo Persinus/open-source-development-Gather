@@ -118,28 +118,32 @@ export class Player {
         })
         text.anchor.set(0.5)
         text.scale.set(0.07)
-        text.y = 8
+        text.y = -50
         this.parent.addChild(text)
     }
     // chưa show đc reaction lên màn hình 
     public showReaction(emoji: string) {
-        const reactionText = new PIXI.Text(emoji, {
-    fontFamily: 'silkscreen',
-    fontSize: 64,
-    fill: 0xFFFFFF
-});
-        reactionText.anchor.set(0.5)
-        reactionText.scale.set(0.07)
-        reactionText.y = -100
-        this.parent.addChild(reactionText)
+    const reactionText = new PIXI.Text({
+        text: emoji,
+        style: {
+            fontFamily: 'Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif',
+            fontSize: 128,
+            fill: 0xFFFFFF,
+            align: 'center'
+        }
+    })
+    reactionText.anchor.set(0.5)
+    reactionText.scale.set(0.07)
+    reactionText.y = -10
 
-        this.activeReactions.push(reactionText)
+    this.parent.addChild(reactionText)
+    this.activeReactions.push(reactionText)
 
-        setTimeout(() => {
-            this.parent.removeChild(reactionText)
-            this.activeReactions = this.activeReactions.filter(r => r !== reactionText)
-        }, 2000)
-    }
+    setTimeout(() => {
+        this.parent.removeChild(reactionText)
+        this.activeReactions = this.activeReactions.filter(r => r !== reactionText)
+    }, 2000)
+}
     public setMessage(message: string) {
         if (this.textTimeout) {
             clearTimeout(this.textTimeout)
@@ -160,10 +164,10 @@ export class Player {
                 align: 'center'
             }
         })
-        text.anchor.x = 0.5
-        text.anchor.y = 0
+        text.anchor.x = 1
+        text.anchor.y = -10
         text.scale.set(0.07)
-        text.y = -text.height - 42
+        text.y = -text.height - 60
         this.parent.addChild(text)
         this.textMessage = text
 
@@ -171,14 +175,16 @@ export class Player {
             content: message,
             username: this.username
         })
-
+    
         this.textTimeout = setTimeout(() => {
             if (this.textMessage) {
                 this.parent.removeChild(this.textMessage)
             }
         }, 10000)
     }
-
+    
+    
+    
     public async init() {
         if (this.initialized) return
         await this.loadAnimations()
