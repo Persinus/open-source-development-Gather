@@ -27,7 +27,7 @@ const PixiApp:React.FC<PixiAppProps> = ({ className, mapData, username, access_t
             const app = new PlayApp(uid, realmId, mapData, username, initialSkin)
             appRef.current = app
             setModal('Loading')
-            setLoadingText('Connecting to server...')
+            setLoadingText('Đang kết nối tới máy chủ...')
             const { success, errorMessage } = await server.connect(realmId, uid, shareId, access_token)
             if (!success) {
                 setErrorModal('Failed To Connect')
@@ -35,7 +35,7 @@ const PixiApp:React.FC<PixiAppProps> = ({ className, mapData, username, access_t
                 return
             }
 
-            setLoadingText('Loading game...')
+            setLoadingText('Đang tải trò chơi...')
             await app.init()
             setModal('None')
             const pixiApp = app.getApp()
