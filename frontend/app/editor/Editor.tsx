@@ -101,7 +101,7 @@ const Editor:React.FC<EditorProps> = ({ realmData }) => {
     }, [gameLoaded])
 
     return (
-        <div className='relative w-full h-screen flex flex-col bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950'>
+        <div className='relative w-full h-screen flex flex-col  from-indigo-900 via-purple-900 to-indigo-950'>
             <TopBar />
             <div className='w-full grow flex flex-row'>
                 <LeftBar tool={tool} tileMode={tileMode} selectTool={selectTool} selectTileMode={selectTileMode} specialTile={specialTile} eraserLayer={eraserLayer} selectEraserLayer={selectEraserLayer}/>
