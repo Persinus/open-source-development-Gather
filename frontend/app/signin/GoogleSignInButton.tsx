@@ -22,7 +22,7 @@ const GoogleSignInButton: React.FC<GoogleSignInButtonProps> = ({ onClick }) => {
         >
             <img src='/google-logo.png' alt="Google logo" className="h-9 w-9" />
             <span className="text-black text-lg font-semibold tracking-wide">
-                Sign in with Google
+                Đăng nhập 
             </span>
         </button>
     )
