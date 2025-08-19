@@ -45,7 +45,7 @@ const AccountDropdown:React.FC = () => {
               leaveTo="opacity-0 translate-y-4 translate-y-0 scale-95"
             >
               <Dialog.Panel className={`absolute top-[78px] right-[8px] transform overflow-hidden text-left shadow-xl transition-all`}>
-                <button className='bg-secondary hover:bg-light-secondary animate-colors rounded-md w-32 text-center p-1 outline-none' onClick={handleSignOut}>Sign Out</button>
+                <button className='bg-secondary hover:bg-light-secondary animate-colors rounded-md w-32 text-center p-1 outline-none' onClick={handleSignOut}>Đăng xuất</button>
               </Dialog.Panel>
             </Transition.Child>
           </div>
