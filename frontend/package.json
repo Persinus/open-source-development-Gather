@@ -15,6 +15,7 @@
     "agora-rtc-sdk-ng": "^4.22.1",
     "agora-token": "^2.0.3",
     "autoprefixer": "10.4.17",
+    "framer-motion": "^12.23.12",
     "geist": "^1.2.1",
     "gsap": "^3.12.5",
     "lucide-react": "^0.539.0",
