@@ -43,22 +43,7 @@ export const NavbarChild:React.FC<NavbarChildProps> = ({ name, avatar_url }) => 
                     <PlusCircleIcon className="h-5" />
                 </BasicButton>
 
-                {/* Nhập share link / join room */}
-                <div className="flex flex-row items-center gap-2">
-                    <input 
-                        type="text"
-                        placeholder="Nhập link hoặc mã share"
-                        value={shareIdInput}
-                        onChange={(e) => setShareIdInput(e.target.value)}
-                        className="px-2 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-48"
-                    />
-                    <BasicButton
-                        onClick={joinRoom}
-                        className="px-3 py-1 bg-indigo-500 text-black rounded-lg hover:bg-indigo-600 transition-colors"
-                    >
-                        Join
-                    </BasicButton>
-                </div>
+                
 
                 {/* Avatar + tên */}
                 <div
