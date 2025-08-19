@@ -73,14 +73,14 @@ const IntroScreen: React.FC<IntroScreenProps> = ({ realmName, skin, username, se
 
     return (
         <main className="w-full min-h-screen flex flex-col items-center justify-center px-2 bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950">
-            <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-6">
-                Chào mừng đến với <span className="text-[#CAD8FF]">{realmName}</span>
+            <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-6 text-white">
+                Chào mừng đến với <span className="text-white">{realmName}</span>
             </h1>
 
             <section className="
                 flex flex-col-reverse sm:flex-row items-center gap-8 sm:gap-16
                 bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 sm:p-10
-                max-w-3xl w-full
+                max-w-3xl w-full text-white
             ">
                 {/* Video + mic/cam */}
                 <div className="flex flex-col items-center gap-4 w-full sm:w-auto">
